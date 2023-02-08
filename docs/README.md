@@ -1,10 +1,17 @@
-# SBTal repo documentation
+# Jens Edlund's writing
 
-Documentation should be built and commited before 
-each stable and each development release.
+This is based on the SBTal standard template, but we
+place each specific top-level adoc file in its own directory
+under `/docs/WORK/`, where `WORK` is a short version 
+of the name of the work. Full sections of the writing 
+are placed in that same directory, but generic texts 
+are better places in the generic include directory.
+Top level files may load their own config (that would be 
+placed in their main directory, but this should start out
+loading the general config (which it can then override).
 
 To build, start by checking the `repoversion` attribute
-in `/docs/asciidoc/attributes/config.adoc` - it should
+in `/docs/aciidoc/attributes/config.adoc` - it should
 be set to the version you're about to release. If it 
 isn't, set it commit and push.
 
