@@ -1,0 +1,177 @@
+== Other papers
+
+// tag::lrec-ranks-rejected[]
+
+.Ranks (rejected at LREC)
+[%collapsible]
+====
+.Introduction
+
+When the Covid-19 pandemic broke out, we were engaged in building a 
+meeting room with a rich set of sensor technologies for the 
+purpose of studying gaze patterns in multiparty conversations. 
+This ground to a halt under Covid-19 restrictions. At the same time, 
+the effects of the pandemic on our work environment was strikingly 
+evident as distant meetings quickly replaced face-to-face meetings 
+everywhere. The sheer numbers are staggering: in 2020, Zoom added 
+>2 million active users monthly 
+cite:[VideoConferencingMarket2021]. We currently have more people 
+that are well-versed in the art of distant meetings than ever before. 
+
+Since we double as practitioners and speech scientists with a special 
+interest in face-to-face communication, we began to structure the 
+experience and to listen to the remarks of colleagues. One thing that 
+seemed evident was that several quite distinct video conferencing 
+cultures were developing. Most notable was the existence of a highly 
+controlled "raise your virtual hand to speak", "turn off your video", 
+"mute your mic when not speaking" culture and a more relaxed "pretend 
+it’s a real meeting", "leave camera and mic on", "please feel free to 
+interrupt" culture. But how could we research this? Even if we 
+verified the existence of these video conferencing cultural differences 
+(using simple means as a questionnaire), how could we gauge their effects?
+
+The question made us realise a flaw in our planned multiparty gaze 
+experiments: we had no means of measuring meeting quality objectively, 
+and so would only be able to note the existence of different gaze 
+patterns, but we would not be able to pit them against objective 
+meeting outcomes.
+
+A literature review did not reveal any obvious existing paradigm that 
+would allow us to compare different meetings in the manner we wanted 
+to, and so we decided to divert our attention and make an effort to 
+design such a paradigm.
+
+In this paper, we present the premises, requirements and desiderata we 
+set out to meet; discuss them against a backdrop of relevant work in 
+several fields, and describe the method in itself. The paper is 
+accompanied by a publicly available, free and open-source release of 
+a reference implementation of the method’s outcome modelling and analyses.
+
+.Preliminaries
+
+The overarching goal is to develop a method by which meetings can 
+be objectively compared with respect to their outcome. The envisaged 
+unmarked baseline case with which variations are compared has the 
+following characteristics:
+
+* It is a traditional, collocated, face-to-face meeting.
+* The number of participants is not fixed, but is within the range of a small meeting (i.e. 3-7 participants).
+* The meeting participants are professionals.
+* The meeting is  collaborative.
+* The task is sufficiently interesting and challenging that participants can be expected to engage and that results are interesting to study.
+
+The following requirements should be met by the method:
+
+[horizontal]
+Theory agnosticism:: It should be capable of testing implications 
+of theories. It should not rely heavily on highly theory specific 
+assumptions or be designed to work within the constraints of a 
+specific theory. 
+Transparency:: As complete theory agnosticism is in practice 
+impossible, the method should be transparent about the theoretical 
+assumptions that it does rely on.
+Objectivity:: To the greatest extent possible, the method should 
+be objective. There is undoubtedly value in self-reported perceived 
+quality, but this method should be based on observable outcomes.
+Symmetry:: It should not impose asymmetry on meeting participants. 
+It should permit comparisons between meeting participants on equal 
+grounds.
+Interpretability:: Its metrics should be amenable to interpretation: 
+straightforward, explicable metrics over for example the latent 
+features of neural models.
+Simplicity:: The method should in itself should not come with high 
+demands on for example facilities and sensor/capture technology, but 
+should be applicable in a regular meeting setting with little 
+adaptation.
+
+In addition, the following desiderata apply:
+
+Generality:: Methods with which we can meaningfully compare a greater 
+variety of meetings and meeting designs are preferable to more 
+restricted methods. 
+Repeatability:: It should be as repeatable as possible, and at the 
+very least, it must be able to both compare several instances of 
+the same experiment.
+Extensibility:: Ideally, it should be able to utilise information 
+from arbitrary (potentially complex) sources such as sensor data.
+External validity:: It should minimise reliance on strictly controlled, 
+atypical environments and should not require experiments in highly 
+unfamiliar lab settings.
+Granularity:: We would want granular results than a single result 
+metric. For example, a method that can talk of not only about the 
+quality of the meeting as a group, but also of its value to the 
+individual participants.
+
+.Background
+
+Merriam-Webster defines "meeting" as "an act or process of coming 
+together". Others include a measure of deliberation , such as Google’s 
+English Dictionary by Oxford Languages: "an assembly of people for a 
+particular purpose". Here, we are concerned with this latter kind of 
+purposeful meeting - the type of gathering Goffman describes as "the 
+natural unit of social organisation in which focused interaction o
+ccurs", where focused interaction is "when people effectively agree to 
+sustain for a time a single focus of cognitive and visual attention, 
+as in a conversation, a board game, or a joint task sustained by a 
+close face-to-face circle of contributors" (Goffman, 1961). We will 
+however interpret "close face-to-face circle" loosely in order to allow 
+the inclusion of distant and hybrid meetings. Other constraints typically 
+associated with the term meeting include synchroneity among the 
+participants and a limitation in time, denoted by a beginning and an end 
+cite:[jablinWiredMeetingsTechnological2001].
+
+We further limit the scope to professional meetings, and more specifically those that occur in the segment of the workforce that has been labelled "knowledge workers". The term was first used by Drucker around 1960 (Drucker, 1959, 1961). Although it is not a particularly well-defined concept (Scarbrough, 1999), it commonly includes occupations such as doctors, lawyers, scientists and academics. Around the turn of the century, Drucker explicitly included what he labelled "knowledge technologists", exemplified by computer technicians, lab analysts, paralegals, software designers, into the group (Drucker, 1999). 
+
+A broader area than meetings, but clearly related to both meetings and knowledge work, is the Command, Control, Communication, Computers and Intelligence (C4I) field. The C4I label appeared towards the end of the 20th century and became popular in studies of military tasks, rescue tasks, and air traffic control (Armstrong, Jr., 1994). The focus on command and control makes the field a special case of studies in communication, computers and intelligence, which is in essence the field of (mediated) communication. 
+
+.Directions in meeting research
+
+The study of meetings has received attention in several disciplines. A key body of work is what we may term the social psychology of small groups, a field that reached a peak in the 70s. (Davis et al., 1976) presents a comprehensive overview that is particularly relevant. The focus here is not as much on meetings as it is on the dynamics of work in small groups in general, and although the two are clearly associated, they are not the same. Goffman points to a number of reasons to hold the two concepts apart, with the strongest being that the crucial meeting attribute of "maintenance of continuous engrossment in the official focus of activity" is "not a property of social groups in general" (Goffman, 1961).
+
+In literature more directly focussed on meetings there are several directions that are worth specific mention here. The study of the effects of meeting facilitators blossomed in the 1990s, in part as a result of the increase of team-based organisations, but also because "the advent of group support technologies" (e.g., audio-video conferencing) created "a special demand for facilitation" (Niederman & Volkema, 1999; here you will also find a brief overview of the field). Directly related to the same technology development are studies of the effects of distance (e.g. in audio-video conferencing). (Fulk & Collin-Jarvis, 2001) provides a comprehensive overview of 20th century work in this field. There is also a literature investigating technical support for meetings in more general terms. Of particular relevance for this work is the discussion on group decision support systems (GDSS) - systems that combine "communication, computing, and decision support technologies to facilitate formulation and solution of unstructured problems by a group of people" (DeSanctis & Gallupe, 1987; this also contains a brief overview on the topic).  Recent work in the C4I area is also relevant, with studies for example of how eye contact and the ability to see the other team members affect execution (Roberts et al., 2021).
+
+.Meeting types, tasks and objectives
+(Volkema & Niederman, 1995, pp. 5–7) contains an overview of the literature on meeting types. In addition, they add a structured view that sorts many of the proposed types into a two-dimensional grid. In the first dimension, they divide meetings according to how information flows between participants: freely between all or most participants (organic) or primarily between a single individual to the others (hierarchical). They also permit a third, undetermined information flow type (organic/hierarchical). Their second dimension is whether a meeting has a single, compelling focus (single-focused) or multiple foci (multifocused). They go on to exemplify each cell in the grid with a typical meeting type (Table N). Because we are looking for symmetric meetings, our interest is primarily on organic meetings, and because we are after a straightforward measure of outcome, we are mainly interested in single focussed meetings, in this terminology. (Volkema & Niederman, 1995) exemplify this combination with brainstorming and problem solving tasks.
+
+Much significant work done on group tasks and productivity (see McGrath, 1984, Chapter 5, for an overview of early work) is applicable to meeting tasks. The work of Morris and Hackman (e.g. Hackman & Morris, 1975; Morris, 1966) shares several characteristics with the work presented here, in that it targets: (1) tasks with written (thus observable) products; (2) the products themselves; and (3) ratings of these products. They distinguish between "production" tasks, which require "the production and presentation of ideas"; "discussion" tasks, which require "an evaluation of issues", and "problem-solving" tasks, which require "the specification of a course of action to be followed to solve some problem" (note that "problem-solving" is used with different meaning by others in the field). In this terminology, the discussion tasks are the best match for the requirements and desiderata that guide the present work. 
+
+(Steiner, 1972) puts forth a useful distinction between divisible and unitary tasks. The latter are tasks which require a single unified outcome, such that the individuals taking part must agree on the outcome one way or another. He further divides unitary tasks based on how the participants’ contributions are combined. In disjunctive tasks, if a participant completes the task, it is completed for the entire group. In a conjunctive task, all participants must succeed for the task to succeed. Finally additive tasks are those where the input of each participant is somehow summed up in the outcome. The three types are associated, roughly, by the way participant skill affect their outcome: for disjunctive tasks, the best participant decides the outcome; for conjunctive, the outcome is decided by the worst participant’s result; and for additive tasks, the result is decided by the average skill of the participants. We are mainly interested in unitary tasks, as they require collaboration, and additive tasks, as their output reflects the contribution of all participants rather than the best or the worst participant alone.
+
+(Davis et al., 1976) distinguishes cooperative, competitive and mixed-motive tasks, and among the former, they separate intellective tasks, which have a demonstrably correct answer and decision tasks, which may have preferable and less preferable answers, but no single true answer. Here, the outcome of the task is a more or less adequate decision rather than a correct or incorrect answer. Our premises include a focus on collaboration, so cooperative tasks are a given. We are also more interested in decision tasks than intellective tasks, as the former are typically a better basis for fruitful discussion.
+
+(McGrath, 1984) starts from Hackman’s three classes, where "production" and "problem-solving" becomes generate (ideas and plans, respectively) and "discussion" becomes choose or negotiate depending on the situation. He then adds execute as a fourth alternative. Each of these four basic "quadrants" is then divided into two using features from several other classifications. This results in eight task types: planning tasks, creativity tasks, intellective tasks, decision making tasks, cognitive conflict tasks, mixed-motive tasks, competitive tasks, and psycho-motor tasks. This classification - the circumplex model - has been quite influential. As an example, (DeSanctis & Gallupe, 1987) combine the circumflex model with meeting size and a face-to-face/dispersed parameter to create a "contingency perspective for GDSS research". In this terminology, our main interest is in the choose quadrant, and more specifically in decision making tasks.
+
+
+.Mediated meetings
+
+As mentioned, there is relevant work in the GDSS field, although it targets groups rather than meetings.  (DeSanctis & Gallupe, 1987) proposed a division of electronic support systems (for group decisions) into three levels. Level 1 contains "technical features aimed at removing common communication barriers". This is the most relevant level for the present work, as it contains audio/video conferencing. Levels 2 and 3 are also relevant, however, as they provide scaffolding for how to describe the technical aspects or a meeting. Level 2 provide "decision modeling and group decision techniques" intended to clarify the decision process. Examples include planning tools and budget allocation tools. Level 3, finally, deals with "machine-induced group communication patterns" and may provide expert advice in procedure selection or automated counselling. Level 3 was quite high-level at the time, and is rarely discussed in the literature (Rouwette & Franco, 2021), although the rise of deep learning may change that.
+
+(Fulk & Collin-Jarvis, 2001) makes a three-way distinction between group support systems (GSS,  which they do not seem to differentiate from GDSS, and which refers to all three levels of DeSanctis & Gallupe); teleconferencing, which refers to "meetings held through audioconferencing and videoconferencing systems"; and computer conferencing, by which they mean simultaneous collaborative work on a file shared on a network. In this terminology, teleconferencing is the main area of interest from our perspective. Review papers on teleconferencing started appearing as early as the 1970s (Williams, 1977). We note, however, that even though audio and video conferencing technology has improved by leaps and bounds since its infancy, acceptance of distant meetings may not have increased  at the same rate (Blenke et al., 2017). We also note that the main issue may not be acceptance but rather that video conferencing and face-to-face meetings simply work differently (Denstadli et al., 2012) and that attitudes vary with the type of video conferencing system used (Julsrud et al., 2012).
+
+(Fulk & Collin-Jarvis, 2001) also present an outline of the three dominant theoretic currents in the mediated meeting field: media capacity theories, input-process-ouput theories, and structuration theories. Ideally, we would want our methodology to be able to test predictions from each of these theories. 
+
+Within the small group research field, studies of "virtual teams" has become an arena for investigating mediated meetings. Hertel et al. (2005 provide a review, and also note that "electronic communication media are not only used in virtual teams but also in conventional teams". As a consequence of this observation, they propose to view the virtuality of a team as a continuum rather than a binary choice. With this view, we are better poised to investigate the experiences knowledge workers have had during the Covid-19 pandemic.
+
+Face-to-face interaction is another research field that has taken a keen interest in video conferencing, targeting its presumed inability to faithfully transfer communicative cues and the resulting deterioration on quality of interaction. Various more or less complex technical video solutions have been proposed from near the dawn of video conferencing until the present (e.g. Adeboye, 2020; Nguyen & Canny, 2007; Okada et al., 1994; Sellen et al., 1992), as well as considerably more complex solutions involving avatars in order to achieve telepresence over low bandwidth (Al Moubayed et al., 2012; Beskow et al., 2009). Our methodology should be able to be able to test findings and predictions from these fields.
+
+.Meetings and the Covid-19 pandemic
+
+The Covid-19 pandemic has caused both knowledge workers and people in general to become experienced participants in distant meetings. One consequence is a clear upswing in academic publications on distant meetings, often with a specific Covid-19 perspective. The focus ranges from guidelines (Oeppen et al., 2020), to direct comparisons between face-to-face meetings and video conferences (Jabotinsky & Sarel, 2020), to investigations of more or less new complaints such as Zoom fatigue (Nesher Shoshan & Wehrt, 2021) and concerns about being forced to appear on video (Okabe-Miyamoto et al., 2021). A corresponding upswing can be seen in literature on large mediated meetings, such as hybrid or fully virtual conferences, with a host of guidelines emerging (see Rubinger et al., 2020 for a review; see also Spilker et al., 2020 for a contrasting pre-pandemic review of technology-enhanced conferences).
+
+.Assessment of meetings
+
+Notwithstanding the voluminous literature in many disciplines, several authors point to methodological shortcomings concerning the assessment and evaluation of meetings. Davenport et al. found "an astounding lack of knowledge in what actually improves performance" and that "measures, controls, hypotheses and even the recording of lessons learned" were often lacking. Instead, "fad, fashion and faith" drove decisions about new work environments for knowledge workers (Davenport et al., 2002). This was in 2002, but it is not easy to find evidence of major improvements. In 2015, Davenport’s view was largely the same, as he states that in knowledge work "evaluating productivity and performance is much more difficult", that quality is "perhaps the greatest problem in measuring knowledge work" and - of particular relevance here - that "the increasing movement of knowledge work out of the office and into homes, aeroplanes, and client sites makes it difficult to use hours worked as a measure" and finally that that criterion "never had much to do with the quality of knowledge produced." (Davenport, 2015). We also note that similar notions surround the assessment of other meeting types as well, as when Jacobs and McFarlane state that "little attention has been paid either to developing a theoretically informed understanding of conference practice as knowledge building, or to assessing the extent to which conferences are successful" about academic conferences (Jacobs & McFarlane, 2005).
+
+In C4I, the lack of well-defined methods for evaluation was noted early: "Testing and evaluation of C4I systems suffer from a lack of metrics and an ad hoc approach to system integration. As a result, it is difficult to evaluate the value-added of investments in C4I systems. Also, existing systems remain in operation beyond their useful life because they are rarely re-evaluated." (Armstrong, Jr., 1994). In this area, however, there has been considerable progress. The Event Analysis of Systematic Teamwork (EAST) methodology (Stanton et al., 2008) provides detailed modelling of several aspects of teamwork, with a focus on communication. EAST may be too complex and costly to use for pure meeting studies, but in a meeting context, it may be possible to slim the system down since many EAST parameters are fixed. The methodology has been used to model for example the effects of collaborators facing each other in a submarine control room (rather than working with their back turned) in a manner that is reminiscent of the video/no video condition in video conferencing (Roberts et al., 2021).
+
+In general, we note that an overwhelming majority of studies of meeting quality uses some manner of subjective, survey based perceived meeting quality as the quality metric. Often, this seems to be accepted as a necessary state of affairs. Davenport notes, however,  that there is a traditional way to measure (some) knowledge work outcomes, which "involves determining who is a relevant peer group for the particular work involved, and asking them what they think of it" (Davenport, 2015). The technique proposed in this paper involves peer review, in a sense: it incorporates comparison of meeting outcomes with a group of experts’ results on the same task.
+
+Of three meeting theories reviewed by (Fulk & Collin-Jarvis, 2001), input-process-output (IPO) is the one that provides the most straightforward basis for meeting evaluation: the output (measured in some way) depends on the input (the meeting characteristics) and the process (what occurs in the meeting). In time, interaction and performance theory (TIP), task classification into idea generation, intellective, judgement, and negotiation tasks (tasks of increasing complexity, as discussed above) is integrated in the IPO framework  (McGrath & Hollingshead, 1993), with an underlying argument that more complex tasks require richer meeting systems, which aligns well with another of the main meeting theories put forth by (Fulk & Collin-Jarvis, 2001). The third main theory reviewed, structuration theories, adds desirable distinctions to IPO, such as the notion that technologies do not affect processes directly, but rather that processes vary based on how technology is appropriated during interaction. This facilitates, for example, modelling participants’ subjective expectations of technology as an input factor. 
+
+The rest of th epaper, starting with *The proposed method: Ranks*,
+is not relevant to this paper, but should rather go in a separate 
+paper.
+
+
+====
+// end::lrec-ranks-rejected[]

@@ -1,0 +1,64 @@
+= A reader on Carney Landis 
+include::./attributes/config.adoc[]
+:author_1:         Jens Edlund
+:email_1:          edlund@speech.kth.se
+:firstname_1:      Jens
+:lastname_1:       Edlund
+:authorinitials_1: JE
+:revnumber:        {repoversion}
+:revdate:          2023-06-07
+:revremark:        First draft
+:description: This is an overview of documents related to the
+work of Carney Landis. 
+:keywords: experimental psychology, facial expressions, emotion, attitude
+
+Carney Landis (1897-1962) was active in the 1st half of the 19th century. He is 
+most famed for a set of studies where different stimuli were presented 
+to human participants whose facial expressiones were recorded in 
+several ways. Landis was an empiricist and mainly interested in 
+experimental methodology 
+cite:[huntCarneyLandis189719621962].
+
+== Overview
+
+.Motivation
+[%collapsible]
+====
+Carney Landis is responsible for a couple of experiments that would not 
+pass any ethics board on the planet these days, for a number of reasons. 
+His findings with respect to his stated research questions are also pretty 
+inconsequential and unsurprising, as well as questionable (from  a 
+methodological standpoint). But some of his arguments are of interest, 
+at least in the sense that thay are early attestations of views that 
+are currently commonly held. And he is undoubtedly a part of the research
+history on the topic of facial expressions, for better or for worse.
+====
+
+.Venue(s)
+[%collapsible]
+====
+This is intended as source material, not a publication in itself.
+====
+
+.Plan
+[%collapsible%open]
+====
+This section is supposed to hold todo tasks that can be completed 
+and checked. We can also add text accounts, but lists are the main thing :-)
+
+* [ ] Read up on this
+** [ ] https://fr.wikipedia.org/wiki/Carney_Landis[Carney Landis on Wikipedia (French)] 
+It is perhaps relevant that Landis is only represented on French Wikipedia...
+
+====
+
+.Ideas and comments
+[%collapsible]
+====
+
+
+====
+
+== References
+
+bibliography::[]

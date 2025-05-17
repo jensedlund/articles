@@ -1,0 +1,61 @@
+// Document overview - not part of the publication
+
+== Overview
+
+.Motivation
+[%collapsible]
+====
+There is a rather complex story to be told about meeting 
+research, and how meetings have been evaluated, historically.
+For us, from a speech technology and telepresance perspective,
+it is a question of how meetings can be evaluated, and what 
+meetings can be evaluated. And in order to get to the answer 
+to that question, we need to know what the purpose of meetings 
+are.
+
+We are mainly interested in findijng out what technology, 
+augmentation, and/or limitations do to meeting efficiency. 
+And we may argue that some things can be pinned down, at least
+initially, to make the task less daunting.
+
+So these are parameters we need to investigate and possible make
+a choice of:
+
+- # participants
+- meeting type
+
+
+====
+
+.Venue(s)
+[%collapsible]
+====
+One obvious possibility is JLRE, but then we should talk about 
+our data collection, so that is more the paper to write with Ghazaleh.
+
+For the review paper (this paper), Computer Speech and Language may 
+be a better choice.
+====
+
+.Plan
+[%collapsible%open]
+====
+This section is supposed to hold todo tasks that can be completed 
+and checked. We can also add text accounts, but lists are the main thing :-)
+
+* [ ] Definitions:
+** [ ] Meeting (we need a broad spread of references from 
+different fields, and out choice together with its motivation.
+* [ ] List of overview articles
+* [ ] Set up subdocuments as holding containers for existing material (these should be removed when the references are reorganized)
+** [ ] Grab the sections with references from 
+link:https://docs.google.com/document/d/1KwwioFkG0vftdcYo8Rz5j_DmSFryVGNMX3vTbkBDGc4/edit#heading=h.lj84thsdj0xm[Collaborative decision-making meetings as a speech technology domain]
+** [ ] Grab the sections with references from 
+https://docs.google.com/document/d/1jJl57Ragl6P43F6I5_m7llpPNi734gc3Z3y1kSTmaDU/edit#[Ranks: collaborative tasks and assessment for studies of meeting characteristics]
+
+====
+
+.Ideas and comments
+[%collapsible]
+====
+====

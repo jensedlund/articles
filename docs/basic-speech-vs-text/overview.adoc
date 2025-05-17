@@ -1,0 +1,46 @@
+// Document overview - not part of the publication
+
+== Overview
+
+.Motivation
+[%collapsible]
+====
+
+
+====
+
+.Venue(s)
+[%collapsible]
+====
+
+This is intended as source material, not a publication in itself.
+====
+
+.Plan
+[%collapsible%open]
+====
+This section is supposed to hold todo tasks that can be completed 
+and checked. We can also add text accounts, but lists are the main thing :-)
+
+* [ ] Read up on this
+** [ ] https://en.wikipedia.org/wiki/Phonocentrism[phonocentrism]
+* [ ] Follow up
+** [ ] Silent spoken text - spoken text inside ones head. E.g. "When you read a book, do you hear a voice narrating? Which one?" 
+cite:[collignonWhyLeroyCan1978] is a lead here, even though it is mainly a narration and not much more.
+* [ ] Sections to include
+** [ ] Natural language
+** [ ] Spoken text and written speech
+*** [ ] Speech/oriented text processing 
+** [ ] Characteristics of speech and text
+====
+
+.Ideas and comments
+[%collapsible]
+====
+== Phonocentrism, early work
+
+There is support, perhaps, in 
+cite:[platoPhaedrus-359].
+
+
+====

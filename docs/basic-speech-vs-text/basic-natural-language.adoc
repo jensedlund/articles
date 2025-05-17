@@ -1,0 +1,24 @@
+// Copy on natural language, use freely for backgrounds
+
+== Natural language
+
+=== Definitions of natural language
+
+On 11th February 2023, the Wikipedia entry for "natural language" contained the following 
+introduction:
+
+----
+In neuropsychology, linguistics, and philosophy of language, a natural language 
+or ordinary language is any language that has evolved naturally in humans through 
+use and repetition without conscious planning or premeditation. Natural languages 
+can take different forms, such as speech or signing. They are distinguished from 
+constructed and formal languages such as those used to program computers or to 
+study logic.
+----
+cite:[NaturalLanguage2022]
+
+The passage is relatively robust and has not been edited to any signifcant extent 
+for many years.
+
+when it is arguably a richer and more expressive language, an ancient, primary, multimodal language that has evolved into being and is learned by doing, in other words a natural language. In contrast, writing a relatively recent technology that was invented rather than evolved, and that has to be learned in school rather than by being emergence - so not a natural language according to most definitions.  
+

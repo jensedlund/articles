@@ -1,0 +1,68 @@
+= A reader on Carney Landis 
+include::./attributes/config.adoc[]
+:author_1:         Jens Edlund
+:email_1:          edlund@speech.kth.se
+:firstname_1:      Jens
+:lastname_1:       Edlund
+:authorinitials_1: JE
+:revnumber:        {repoversion}
+:revdate:          2023-06-07
+:revremark:        First draft
+:description: This is a reader on the work of Carney Landis. \
+It holds bits and pieces that should be moved out to other \
+copy repositories, such as a number f examples and early \
+attestations. Use freely for e.g. backgrounds.
+:keywords: experimental psychology, facial expressions, emotion, attitude
+
+Carney Landis (1897-1962) was active in the 1st half of the 19th century.
+He was an eperimental psychologist with a fairly broad range mof interests. 
+In the popular mind his work survives mainly through a couple of experments 
+which are remembered for being grizly and designed in a manner that would not
+pass an ethics board today. It is possible, however, that he's been more 
+influential than that in reality. His work is not represented in Web of Science,
+and his highest citation count at Google Scholar is 382, for 
+cite:[landisStudiesEmotionalReactions1924] which is likely the most 
+controversial of his studies.
+
+== Carney Landis
+
+[NOTE]
+.Uptake and influence
+====
+Remarkably. Landis is not on English Wikipedia. In fact, the only Wikipedia 
+mention is a short article on the French Wikipedia. WIlliam Hunt wrote a 
+breif account of hiw life in the AMerican Journal of Psychology after his 
+passing 
+cite:[huntCarneyLandis189719621962], 
+but apart from that, his name is not often 
+mentioned apart from in popular science accounts of grizly studies (e.g. 
+cite:[plainlydifficultHorrorsFacialExpression2022].
+====
+
+== Texts
+
+== Plainly Difficult reading
+
+There are several things worth noticing in the vlog by Plainly Difficult:
+
+. Mention of Landis' influences
+.. Darwin cite:[darwinExpressionEmotionsMan1890]
+.. citenp:[schulzeExperimentalPsychologyPedagogy1912]. From tastes or smells (?) in children. See which, and what the resuts were.
+.. citenp:[langfeldJudgmentEmotionsFacial1918]. Acted emotions. We should see which!
+
+. Landis is wize to lab environment problems
+.. Mention of dislike of acted stuff, and the instructions including "act naturally" (ca 10 minutes in)
+
+
+== References
+
+bibliography::[]
+
+
+http://archive.org/details/experimentalpsyc00schuuoft/page/xiv/mode/thumb?view=theater
+
+http://darwin-online.org.uk/content/f...
+
+Schulze, R. (1912). Experimental psychology and pedagogy: For teachers, normal colleges, and universities. (R. Pintner, Trans.). George Allen & Co. https://doi.org/10.1037/13764-000
+
+Langfeld, H. S. (1918). The judgment of emotions from facial expressions. The Journal of Abnormal Psychology, 13(3), 172–184. https://doi.org/10.1037/h0070231

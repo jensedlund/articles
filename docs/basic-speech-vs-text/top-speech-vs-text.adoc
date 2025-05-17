@@ -1,0 +1,31 @@
+= Collection: speech vs. text  and text
+include::./attributes/config.adoc[]
+:author_1:         Jens Edlund
+:email_1:          edlund@speech.kth.se
+:firstname_1:      Jens
+:lastname_1:       Edlund
+:authorinitials_1: JE
+:revnumber:        {version}
+:revdate:          2023-02-11
+:revnumber:  1.0.0-0.0.0
+:revremark:        First draft
+:description:  This is a collection of background texts on the similarities and differences of speech.
+:keywords: Meetings, review articles
+
+
+// Document overview - not part of the publication
+include::./overview.adoc[]
+
+// Include natural language rant
+include::./basic-natural-language.adoc[]
+
+
+// Include writing is an invention and a technology rant
+include::./basic-writing-is-an-invention.adoc[]
+
+
+== References
+
+bibliography::[]
+
+

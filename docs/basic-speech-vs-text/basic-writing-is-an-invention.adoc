@@ -1,0 +1,73 @@
+// Copy on natural language, use freely for backgrounds
+
+== Writing is an invention
+
+This relates to "definitions of natural language", but here we simply 
+collect thinkers who have noted that writing is indeed an invention, 
+and reflected on the implications of that.
+
+=== Plato's Phaedrus (Middle dialogues)
+
+Plato has Socrate tell a story in which Egyptian king Thamus (Ammon)
+says the following to Theuth
+
+[quote]
+O most ingenious Theuth, the parent or inventor of
+an art is not always the best judge of the utility or inutility of his
+own inventions to the users of them. And in this instance, you who are
+the father of letters, from a paternal love of your own children
+have been led to attribute to them a quality which they cannot have;
+for this discovery of yours will create forgetfulness in the learners'
+souls, because they will not use their memories; they will trust to
+the external written characters and not remember of themselves. The
+specific which you have discovered is an aid not to memory, but to
+reminiscence, and you give your disciples not truth, but only the
+semblance of truth; they will be hearers of many things and will
+have learned nothing; they will appear to be omniscient and will
+generally know nothing; they will be tiresome company, having the show
+of wisdom without the reality.
+cite:[platoPhaedrus-359]
+
+There are several subsequent passages that.
+
+.Writing is unintelligible and uncertain
+[quote]
+He would be a very simple person, and quite a stranger to the
+oracles of Thamus or Ammon, who should leave in writing or receive
+in writing any art under the idea that the written word would be
+intelligible or certain; or who deemed that writing was at all
+better than knowledge and recollection of the same matters?
+cite:[platoPhaedrus-359]
+
+.Writing is a pale shadow of dialogue
+[quote]
+I cannot help feeling, Phaedrus, that writing is
+unfortunately like painting; for the creations of the painter have the
+attitude of life, and yet if you ask them a question they preserve a
+solemn silence. And the same may be said of speeches. You would
+imagine that they had intelligence, but if you want to know anything
+and put a question to one of them, the speaker always gives one
+unvarying answer. And when they have been once written down they are
+tumbled about anywhere among those who may or may not understand them,
+and know not to whom they should reply, to whom not: and, if they
+are maltreated or abused, they have no parent to protect them; and
+they cannot protect or defend themselves.
+cite:[platoPhaedrus-359]
+
+.Speech on the other hand...
+[quote]
+____
+Soc. Is there not another kind of word or speech far better than
+this, and having far greater power-a son of the same family, but
+lawfully begotten?
+ 
+Phaedr. Whom do you mean, and what is his origin?
+ 
+Soc. I mean an intelligent word graven in the soul of the learner,
+which can defend itself, and knows when to speak and when to be
+silent.
+ 
+Phaedr. You mean the living word of knowledge which has a soul,
+and of which written word is properly no more than an image?
+cite:[platoPhaedrus-359]
+____
